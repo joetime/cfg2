@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="town6668Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="hzBroker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CfgNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Street" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Zip" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Ssn" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="ConsCommission" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="hzClients" Relationship="Self.FK_hz_Clients_hz_Brokers" FromRole="hzBrokers" ToRole="hzClients" />
+    <NavigationProperty Name="hzCommissionRates" Relationship="Self.FK_hz_CommissionRates_hz_Brokers" FromRole="hzBrokers" ToRole="hzCommissionRates" />
+  </EntityType>
+  <EntityType Name="hzClient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="GroupNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CorrectedGroupNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BrokerId" Type="Int32" />
+    <Property Name="CommissionSched" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Provider" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BrokerNumber" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="DateAdded" Type="DateTime" Precision="0" />
+    <Property Name="DateDropped" Type="DateTime" Precision="0" />
+    <Property Name="MetaNote" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="hzBroker" Relationship="Self.FK_hz_Clients_hz_Brokers" FromRole="hzClients" ToRole="hzBrokers" />
+  </EntityType>
+  <EntityType Name="hzCommissionRate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrokerId" Type="Int32" Nullable="false" />
+    <Property Name="Schedule" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rate" Type="Double" Nullable="false" />
+    <NavigationProperty Name="hzBroker" Relationship="Self.FK_hz_CommissionRates_hz_Brokers" FromRole="hzCommissionRates" ToRole="hzBrokers" />
+  </EntityType>
+  <EntityType Name="hzImport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Filename" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Month" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsLocked" Type="Boolean" Nullable="false" />
+    <Property Name="DateLocked" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="hzLockedRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportYear" Type="Int32" Nullable="false" />
+    <Property Name="ReportMonth" Type="Int32" Nullable="false" />
+    <Property Name="BrokerId" Type="Int32" Nullable="false" />
+    <Property Name="AnnDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CommSch" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="EffDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="GroupName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="GroupNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="InsPeriod" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Product" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CommisionRate" Type="Double" Nullable="false" />
+    <Property Name="MonthlyCommission" Type="Double" Nullable="false" />
+    <Property Name="PremiumRecd" Type="Double" Nullable="false" />
+    <Property Name="DateLocked" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserLocked" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="hzLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="LogEntry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_hz_Clients_hz_Brokers">
+    <End Role="hzBrokers" Type="Self.hzBroker" Multiplicity="0..1" />
+    <End Role="hzClients" Type="Self.hzClient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hzBrokers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="hzClients">
+        <PropertyRef Name="BrokerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_hz_CommissionRates_hz_Brokers">
+    <End Role="hzBrokers" Type="Self.hzBroker" Multiplicity="1" />
+    <End Role="hzCommissionRates" Type="Self.hzCommissionRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="hzBrokers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="hzCommissionRates">
+        <PropertyRef Name="BrokerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="town6668Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="hzBrokers" EntityType="Self.hzBroker" />
+    <EntitySet Name="hzClients" EntityType="Self.hzClient" />
+    <EntitySet Name="hzCommissionRates" EntityType="Self.hzCommissionRate" />
+    <EntitySet Name="hzImports" EntityType="Self.hzImport" />
+    <EntitySet Name="hzLockedRecords" EntityType="Self.hzLockedRecord" />
+    <EntitySet Name="hzLogs" EntityType="Self.hzLog" />
+    <AssociationSet Name="FK_hz_Clients_hz_Brokers" Association="Self.FK_hz_Clients_hz_Brokers">
+      <End Role="hzBrokers" EntitySet="hzBrokers" />
+      <End Role="hzClients" EntitySet="hzClients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_hz_CommissionRates_hz_Brokers" Association="Self.FK_hz_CommissionRates_hz_Brokers">
+      <End Role="hzBrokers" EntitySet="hzBrokers" />
+      <End Role="hzCommissionRates" EntitySet="hzCommissionRates" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

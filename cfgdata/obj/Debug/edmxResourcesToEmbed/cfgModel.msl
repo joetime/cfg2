@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="town6668ModelStoreContainer" CdmEntityContainer="town6668Entities">
+    <EntitySetMapping Name="hzBrokers">
+      <EntityTypeMapping TypeName="town6668Model.hzBroker">
+        <MappingFragment StoreEntitySet="hzBrokers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="CfgNumber" ColumnName="CfgNumber" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Ssn" ColumnName="Ssn" />
+          <ScalarProperty Name="ConsCommission" ColumnName="ConsCommission" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hzClients">
+      <EntityTypeMapping TypeName="town6668Model.hzClient">
+        <MappingFragment StoreEntitySet="hzClients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GroupNo" ColumnName="GroupNo" />
+          <ScalarProperty Name="CorrectedGroupNumber" ColumnName="CorrectedGroupNumber" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="CommissionSched" ColumnName="CommissionSched" />
+          <ScalarProperty Name="Provider" ColumnName="Provider" />
+          <ScalarProperty Name="BrokerNumber" ColumnName="BrokerNumber" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="DateDropped" ColumnName="DateDropped" />
+          <ScalarProperty Name="MetaNote" ColumnName="MetaNote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hzCommissionRates">
+      <EntityTypeMapping TypeName="town6668Model.hzCommissionRate">
+        <MappingFragment StoreEntitySet="hzCommissionRates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="Schedule" ColumnName="Schedule" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hzImports">
+      <EntityTypeMapping TypeName="town6668Model.hzImport">
+        <MappingFragment StoreEntitySet="hzImports">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="DateLocked" ColumnName="DateLocked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hzLockedRecords">
+      <EntityTypeMapping TypeName="town6668Model.hzLockedRecord">
+        <MappingFragment StoreEntitySet="hzLockedRecords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReportYear" ColumnName="ReportYear" />
+          <ScalarProperty Name="ReportMonth" ColumnName="ReportMonth" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="AnnDate" ColumnName="AnnDate" />
+          <ScalarProperty Name="CommSch" ColumnName="CommSch" />
+          <ScalarProperty Name="EffDate" ColumnName="EffDate" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+          <ScalarProperty Name="InsPeriod" ColumnName="InsPeriod" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="CommisionRate" ColumnName="CommisionRate" />
+          <ScalarProperty Name="MonthlyCommission" ColumnName="MonthlyCommission" />
+          <ScalarProperty Name="PremiumRecd" ColumnName="PremiumRecd" />
+          <ScalarProperty Name="DateLocked" ColumnName="DateLocked" />
+          <ScalarProperty Name="UserLocked" ColumnName="UserLocked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hzLogs">
+      <EntityTypeMapping TypeName="town6668Model.hzLog">
+        <MappingFragment StoreEntitySet="hzLog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="LogEntry" ColumnName="LogEntry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

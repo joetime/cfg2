@@ -1,0 +1,11 @@
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\obj\Debug\cfglib.csprojResolveAssemblyReference.cache
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\cfglib.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\cfglib.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\cfgdata.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\EntityFramework.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\joetime.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\cfgdata.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\joetime.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\EntityFramework.xml
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\obj\Debug\cfglib.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\obj\Debug\cfglib.pdb

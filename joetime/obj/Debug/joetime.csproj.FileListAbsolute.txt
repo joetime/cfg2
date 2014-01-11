@@ -1,0 +1,5 @@
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\joetime\bin\Debug\joetime.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\joetime\bin\Debug\joetime.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\joetime\obj\Debug\joetime.csprojResolveAssemblyReference.cache
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\joetime\obj\Debug\joetime.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\joetime\obj\Debug\joetime.pdb

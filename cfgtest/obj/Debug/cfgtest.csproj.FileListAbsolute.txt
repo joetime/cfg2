@@ -1,0 +1,16 @@
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\obj\Debug\cfgtest.csprojResolveAssemblyReference.cache
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\cfgtest.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\cfgtest.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\cfglib.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\joetime.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\cfgdata.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\EntityFramework.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\cfglib.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\joetime.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\cfgdata.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\EntityFramework.xml
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\obj\Debug\cfgtest.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\obj\Debug\cfgtest.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\cfgtest.dll.config
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgtest\bin\Debug\EntityFramework.SqlServer.xml

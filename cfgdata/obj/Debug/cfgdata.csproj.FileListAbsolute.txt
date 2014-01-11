@@ -1,0 +1,10 @@
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\bin\Debug\cfgdata.dll.config
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\bin\Debug\cfgdata.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\bin\Debug\cfgdata.pdb
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\bin\Debug\EntityFramework.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\bin\Debug\EntityFramework.xml
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\obj\Debug\cfgdata.csprojResolveAssemblyReference.cache
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\obj\Debug\cfgdata.dll
+c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfgdata\obj\Debug\cfgdata.pdb
