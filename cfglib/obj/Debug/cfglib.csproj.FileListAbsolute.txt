@@ -9,3 +9,14 @@ c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\joet
 c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\bin\Debug\EntityFramework.xml
 c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\obj\Debug\cfglib.dll
 c:\users\jscala\documents\visual studio 2013\Projects\cfg2\cfglib\obj\Debug\cfglib.pdb
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\bin\Debug\cfglib.dll
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\bin\Debug\cfglib.pdb
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\bin\Debug\cfgdata.dll
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\bin\Debug\EntityFramework.dll
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\bin\Debug\joetime.dll
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\bin\Debug\cfgdata.pdb
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\bin\Debug\joetime.pdb
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\bin\Debug\EntityFramework.xml
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\obj\Debug\cfglib.csprojResolveAssemblyReference.cache
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\obj\Debug\cfglib.dll
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfglib\obj\Debug\cfglib.pdb

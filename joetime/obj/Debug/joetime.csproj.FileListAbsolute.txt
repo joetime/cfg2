@@ -3,3 +3,8 @@ c:\users\jscala\documents\visual studio 2013\Projects\cfg2\joetime\bin\Debug\joe
 c:\users\jscala\documents\visual studio 2013\Projects\cfg2\joetime\obj\Debug\joetime.csprojResolveAssemblyReference.cache
 c:\users\jscala\documents\visual studio 2013\Projects\cfg2\joetime\obj\Debug\joetime.dll
 c:\users\jscala\documents\visual studio 2013\Projects\cfg2\joetime\obj\Debug\joetime.pdb
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\joetime\bin\Debug\joetime.dll
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\joetime\bin\Debug\joetime.pdb
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\joetime\obj\Debug\joetime.csprojResolveAssemblyReference.cache
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\joetime\obj\Debug\joetime.dll
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\joetime\obj\Debug\joetime.pdb

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "joetime", "joetime\joetime.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfgtest", "cfgtest\cfgtest.csproj", "{CDB2B32F-A72E-473E-8E5F-FBE7E67536AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfgweb", "cfgweb\cfgweb.csproj", "{4D673202-0ACE-443D-AD6C-10913644BDB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{CDB2B32F-A72E-473E-8E5F-FBE7E67536AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDB2B32F-A72E-473E-8E5F-FBE7E67536AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDB2B32F-A72E-473E-8E5F-FBE7E67536AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D673202-0ACE-443D-AD6C-10913644BDB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D673202-0ACE-443D-AD6C-10913644BDB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D673202-0ACE-443D-AD6C-10913644BDB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D673202-0ACE-443D-AD6C-10913644BDB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

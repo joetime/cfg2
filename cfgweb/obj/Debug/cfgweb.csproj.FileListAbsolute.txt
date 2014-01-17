@@ -1,0 +1,6 @@
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfgweb\bin\cfgweb.dll.config
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfgweb\bin\cfgweb.dll
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfgweb\bin\cfgweb.pdb
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfgweb\obj\Debug\cfgweb.csprojResolveAssemblyReference.cache
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfgweb\obj\Debug\cfgweb.dll
+C:\Users\jscala\Documents\Visual Studio 2013\Projects\cfg2\cfg2\cfgweb\obj\Debug\cfgweb.pdb

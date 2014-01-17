@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Broker.cs" />
+    <Compile Include="HorizonFile.cs" />
+    <Compile Include="HorizonLineItemCollection.cs" />
+    <Compile Include="Lookup.cs" />
+    <Compile Include="MonthYear.cs" />
+    <Compile Include="HorizonFileLineItem.cs" />
     <Compile Include="Repos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

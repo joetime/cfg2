@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="cfgApp">
+<head>
+    <title>CFG</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/chosen.css" rel="stylesheet" />
+    <link href="Content/toastr.min.css" rel="stylesheet" />
+</head>
+<body style="padding-top: 60px;">
+    
+    <navbar></navbar>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-view></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts! -->
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/moment.min.js"></script>
+    <script src="Scripts/toastr.min.js"></script>
+
+    <!-- App -->
+    <script src="App/app.js"></script>
+    <!-- Controllers -->
+    <script src="App/mainCtrl.js"></script>
+    <script src="App/brokersCtrl.js"></script>
+    <!-- Partials -->
+    <script src="App/navbar.js"></script>
+    <script src="App/glyph.js"></script>
+
+</body>
+</html>
