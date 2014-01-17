@@ -1,4 +1,5 @@
-﻿var theApp = angular.module('cfgApp', ['ngRoute', 'partials', 'utils'])
+﻿var theApp = angular.module('cfgApp', ['ngRoute', 'ngResource', 'partials', 'utils' //, 'Brokers'
+])
 .config(function ($routeProvider) {
     $routeProvider
 
@@ -7,7 +8,7 @@
             templateUrl: 'app/main.html'
         })
 
-        .when('/brokers', {
+        .when('/brokers/:brokerId?', {
             controller: 'BrokersCtrl',
             templateUrl: 'app/brokers.html'
         })

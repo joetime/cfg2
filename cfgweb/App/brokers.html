@@ -1,7 +1,29 @@
 ﻿<div>
-    <h2>BrokersCtrl:</h2>
-    
-    <div ng-repeat="broker in list">
-        {{broker}}
+
+    <div class="col-sm-4">
+            
+        <input class="form-control" ng-model="searchText" autofocus />
+        
+        <div class="list-group">
+            <a href="#/brokers/{{broker.Key}}" class="list-group-item" ng-repeat="broker in list | filter:searchText">
+                <h4 class="list-group-item-heading">{{broker.Name}}</h4>
+                <p class="list-group-item-text">{{broker.Alt}}</p>
+            </a>
+        </div>
+        
+    </div>
+    <div class="col-sm-8">
+        <div class="alert alert-info"  ng-show="!brokerId">
+            <glyph icon="arrow-left"></glyph> choose a broker for details.
+        </div>
+        <div class="well" ng-show="brokerId">
+            <h2>{{broker.Name}}</h2>
+            <h4>{{broker.BrokerNumber}}</h4>
+            
+            <small>
+                {{brokerId}}
+                {{broker | json}}
+            </small>
+        </div>
     </div>
 </div>

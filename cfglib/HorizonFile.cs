@@ -167,5 +167,20 @@ namespace cfglib
 
             return new HorizonFile(h);
         }
+
+        public IEnumerable<HorizonFile> ActiveFiles(int num = 12, DateTime? start = null)
+        {
+            List<HorizonFile> list = new List<HorizonFile>();
+            DateTime begin = start ?? DateTime.Now;
+
+            for (int i = 0; i <= num; i++)
+            {
+                DateTime current = begin.AddMonths(-i);
+                HorizonFile file = HorizonFile(current.Month, current.Year);
+                list.Add(file);
+            }
+
+            return list;
+        }
     }
 }
