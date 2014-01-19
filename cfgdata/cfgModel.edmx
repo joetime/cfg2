@@ -4,7 +4,64 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="town6668Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="town6668Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Audit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateStamp" Type="datetime" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="Action" Type="nvarchar" MaxLength="250" />
+          <Property Name="ObjectType" Type="nvarchar" MaxLength="250" />
+          <Property Name="RecordCount" Type="int" Nullable="false" />
+          <Property Name="ObjectKey" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="RawHorizon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Month" Type="int" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="250" />
+          <Property Name="GroupNumber" Type="nvarchar" MaxLength="250" />
+          <Property Name="Product" Type="nvarchar" MaxLength="250" />
+          <Property Name="EffectiveDate" Type="nvarchar" MaxLength="250" />
+          <Property Name="RenewalDate" Type="nvarchar" MaxLength="250" />
+          <Property Name="InsuredPeriod" Type="nvarchar" MaxLength="250" />
+          <Property Name="_CodeOneHundredd" Type="nvarchar" MaxLength="250" />
+          <Property Name="_CoastalCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="CommissionSchedule" Type="nvarchar" MaxLength="250" />
+          <Property Name="_TotalPremiumYTD" Type="nvarchar" MaxLength="250" />
+          <Property Name="PremiumReceived" Type="money" Nullable="false" />
+          <Property Name="ComissionReceived" Type="money" Nullable="false" />
+          <Property Name="Filename" Type="nvarchar" MaxLength="250" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RawOxford">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Month" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="GroupCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="255" />
+          <Property Name="InvoicePeriod" Type="nvarchar" MaxLength="255" />
+          <Property Name="AmountBilled" Type="money" Nullable="false" />
+          <Property Name="PaymentReceived" Type="money" />
+          <Property Name="PercentOfPremium" Type="float" />
+          <Property Name="PEPM" Type="int" Nullable="false" />
+          <Property Name="SubCountPEPM" Type="int" />
+          <Property Name="CommissionAmount" Type="money" />
+          <Property Name="AmountDue" Type="money" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="hzBrokers">
           <Key>
             <PropertyRef Name="Id" />
@@ -112,6 +169,9 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="town6668ModelStoreContainer">
+          <EntitySet Name="Audit" EntityType="Self.Audit" Schema="CFG" store:Type="Tables" />
+          <EntitySet Name="RawHorizon" EntityType="Self.RawHorizon" Schema="CFG" store:Type="Tables" />
+          <EntitySet Name="RawOxford" EntityType="Self.RawOxford" Schema="CFG" store:Type="Tables" />
           <EntitySet Name="hzBrokers" EntityType="Self.hzBrokers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="hzClients" EntityType="Self.hzClients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="hzCommissionRates" EntityType="Self.hzCommissionRates" Schema="dbo" store:Type="Tables" />
@@ -127,8 +187,7 @@
             <End Role="hzCommissionRates" EntitySet="hzCommissionRates" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="town6668Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -257,7 +316,67 @@
             <End Role="hzBrokers" EntitySet="hzBrokers" />
             <End Role="hzCommissionRates" EntitySet="hzCommissionRates" />
           </AssociationSet>
+          <EntitySet Name="RawHorizons" EntityType="town6668Model.RawHorizon" />
+          <EntitySet Name="RawOxfords" EntityType="town6668Model.RawOxford" />
+          <EntitySet Name="Audits" EntityType="town6668Model.Audit" />
         </EntityContainer>
+        <EntityType Name="RawHorizon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Month" Type="Int32" />
+          <Property Name="GroupName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="GroupNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Product" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="EffectiveDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RenewalDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="InsuredPeriod" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="C_CodeOneHundredd" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CommissionSchedule" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="C_TotalPremiumYTD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PremiumReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ComissionReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Filename" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="C_CoastalCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RawOxford">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Month" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="GroupCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GroupName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InvoicePeriod" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AmountBilled" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PaymentReceived" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PercentOfPremium" Type="Double" />
+          <Property Name="PEPM" Type="Int32" Nullable="false" />
+          <Property Name="SubCountPEPM" Type="Int32" />
+          <Property Name="CommissionAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AmountDue" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Audit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RecordCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ObjectType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ObjectKey" Type="Int32" />
+          <Property Name="Action" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -349,6 +468,66 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
                 <ScalarProperty Name="LogEntry" ColumnName="LogEntry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RawHorizons">
+            <EntityTypeMapping TypeName="town6668Model.RawHorizon">
+              <MappingFragment StoreEntitySet="RawHorizon">
+                <ScalarProperty Name="C_CoastalCode" ColumnName="_CoastalCode" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Filename" ColumnName="Filename" />
+                <ScalarProperty Name="ComissionReceived" ColumnName="ComissionReceived" />
+                <ScalarProperty Name="PremiumReceived" ColumnName="PremiumReceived" />
+                <ScalarProperty Name="C_TotalPremiumYTD" ColumnName="_TotalPremiumYTD" />
+                <ScalarProperty Name="CommissionSchedule" ColumnName="CommissionSchedule" />
+                <ScalarProperty Name="C_CodeOneHundredd" ColumnName="_CodeOneHundredd" />
+                <ScalarProperty Name="InsuredPeriod" ColumnName="InsuredPeriod" />
+                <ScalarProperty Name="RenewalDate" ColumnName="RenewalDate" />
+                <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RawOxfords">
+            <EntityTypeMapping TypeName="town6668Model.RawOxford">
+              <MappingFragment StoreEntitySet="RawOxford">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="AmountDue" ColumnName="AmountDue" />
+                <ScalarProperty Name="CommissionAmount" ColumnName="CommissionAmount" />
+                <ScalarProperty Name="SubCountPEPM" ColumnName="SubCountPEPM" />
+                <ScalarProperty Name="PEPM" ColumnName="PEPM" />
+                <ScalarProperty Name="PercentOfPremium" ColumnName="PercentOfPremium" />
+                <ScalarProperty Name="PaymentReceived" ColumnName="PaymentReceived" />
+                <ScalarProperty Name="AmountBilled" ColumnName="AmountBilled" />
+                <ScalarProperty Name="InvoicePeriod" ColumnName="InvoicePeriod" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Audits">
+            <EntityTypeMapping TypeName="town6668Model.Audit">
+              <MappingFragment StoreEntitySet="Audit">
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="ObjectKey" ColumnName="ObjectKey" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="RecordCount" ColumnName="RecordCount" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

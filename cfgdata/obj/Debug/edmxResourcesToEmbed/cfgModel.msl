@@ -89,5 +89,65 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="RawHorizons">
+      <EntityTypeMapping TypeName="town6668Model.RawHorizon">
+        <MappingFragment StoreEntitySet="RawHorizon">
+          <ScalarProperty Name="C_CoastalCode" ColumnName="_CoastalCode" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="ComissionReceived" ColumnName="ComissionReceived" />
+          <ScalarProperty Name="PremiumReceived" ColumnName="PremiumReceived" />
+          <ScalarProperty Name="C_TotalPremiumYTD" ColumnName="_TotalPremiumYTD" />
+          <ScalarProperty Name="CommissionSchedule" ColumnName="CommissionSchedule" />
+          <ScalarProperty Name="C_CodeOneHundredd" ColumnName="_CodeOneHundredd" />
+          <ScalarProperty Name="InsuredPeriod" ColumnName="InsuredPeriod" />
+          <ScalarProperty Name="RenewalDate" ColumnName="RenewalDate" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RawOxfords">
+      <EntityTypeMapping TypeName="town6668Model.RawOxford">
+        <MappingFragment StoreEntitySet="RawOxford">
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="AmountDue" ColumnName="AmountDue" />
+          <ScalarProperty Name="CommissionAmount" ColumnName="CommissionAmount" />
+          <ScalarProperty Name="SubCountPEPM" ColumnName="SubCountPEPM" />
+          <ScalarProperty Name="PEPM" ColumnName="PEPM" />
+          <ScalarProperty Name="PercentOfPremium" ColumnName="PercentOfPremium" />
+          <ScalarProperty Name="PaymentReceived" ColumnName="PaymentReceived" />
+          <ScalarProperty Name="AmountBilled" ColumnName="AmountBilled" />
+          <ScalarProperty Name="InvoicePeriod" ColumnName="InvoicePeriod" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audits">
+      <EntityTypeMapping TypeName="town6668Model.Audit">
+        <MappingFragment StoreEntitySet="Audit">
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="ObjectKey" ColumnName="ObjectKey" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="RecordCount" ColumnName="RecordCount" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

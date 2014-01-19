@@ -13,6 +13,9 @@
         <EntityTypeShape EntityType="town6668Model.hzLog" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="town6668Model.FK_hz_Clients_hz_Brokers" ManuallyRouted="false" />
         <AssociationConnector Association="town6668Model.FK_hz_CommissionRates_hz_Brokers" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="town6668Model.RawHorizon" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="town6668Model.RawOxford" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="town6668Model.Audit" Width="1.5" PointX="8.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

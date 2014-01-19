@@ -5,10 +5,8 @@ using cfglib;
 namespace cfgtest
 {
     [TestClass]
-    public class BrokerTests
+    public class BrokerTests : _BaseTest
     {
-        Repos repos = new Repos();
-
         [TestMethod]
         public void GetBrokerById()
         {

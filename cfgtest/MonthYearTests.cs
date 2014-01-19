@@ -5,7 +5,7 @@ using cfglib;
 namespace cfgtest
 {
     [TestClass]
-    public class MonthYearTests
+    public class MonthYearTests : _BaseTest
     {
         [TestMethod]
         public void TestMonthYearFromString()

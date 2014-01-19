@@ -54,7 +54,6 @@ namespace joetime
 
         public string[] GetWorksheetNames(string fileName)
         {
-            string connString = "";
             OleDbConnection conn = null;
             DataTable dt = null;
 

@@ -125,5 +125,65 @@
       <End Role="hzBrokers" EntitySet="hzBrokers" />
       <End Role="hzCommissionRates" EntitySet="hzCommissionRates" />
     </AssociationSet>
+    <EntitySet Name="RawHorizons" EntityType="town6668Model.RawHorizon" />
+    <EntitySet Name="RawOxfords" EntityType="town6668Model.RawOxford" />
+    <EntitySet Name="Audits" EntityType="town6668Model.Audit" />
   </EntityContainer>
+  <EntityType Name="RawHorizon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="Month" Type="Int32" />
+    <Property Name="GroupName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="GroupNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Product" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="EffectiveDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RenewalDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="InsuredPeriod" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="C_CodeOneHundredd" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CommissionSchedule" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="C_TotalPremiumYTD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PremiumReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="ComissionReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Filename" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+    <Property Name="C_CoastalCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RawOxford">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Month" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="GroupCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="GroupName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="InvoicePeriod" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AmountBilled" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PaymentReceived" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PercentOfPremium" Type="Double" />
+    <Property Name="PEPM" Type="Int32" Nullable="false" />
+    <Property Name="SubCountPEPM" Type="Int32" />
+    <Property Name="CommissionAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AmountDue" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="FileName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Deleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RecordCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ObjectType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ObjectKey" Type="Int32" />
+    <Property Name="Action" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

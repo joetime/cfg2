@@ -34,6 +34,7 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,11 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Broker.cs" />
-    <Compile Include="HorizonFile.cs" />
-    <Compile Include="HorizonLineItemCollection.cs" />
+    <Compile Include="Horizon\HorizonFile.cs" />
+    <Compile Include="Horizon\HorizonLineItemCollection.cs" />
     <Compile Include="Lookup.cs" />
     <Compile Include="MonthYear.cs" />
-    <Compile Include="HorizonFileLineItem.cs" />
+    <Compile Include="Horizon\HorizonFileLineItem.cs" />
+    <Compile Include="Oxford\OxfordLineItemCollection.cs" />
+    <Compile Include="Oxford\OxfordLineItem.cs" />
+    <Compile Include="Oxford\OxfordRepos.cs" />
+    <Compile Include="Oxford\OxfordUtils.cs" />
     <Compile Include="Repos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

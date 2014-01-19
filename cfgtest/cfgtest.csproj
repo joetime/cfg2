@@ -59,12 +59,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BrokerTests.cs" />
-    <Compile Include="HorizonLineItemCollection.cs" />
+    <Compile Include="Oxford\RawOxfordTests.cs" />
+    <Compile Include="Horizon\HorizonLineItemCollection.cs" />
     <Compile Include="MonthYearTests.cs" />
-    <Compile Include="HorizonFileLineItem.cs" />
-    <Compile Include="HorizonFileTests.cs" />
+    <Compile Include="Horizon\HorizonFileLineItem.cs" />
+    <Compile Include="Horizon\HorizonFileTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="LoadFromExcel.cs" />
+    <Compile Include="Horizon\LoadFromExcel.cs" />
+    <Compile Include="_BaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cfglib\cfglib.csproj">
@@ -80,6 +82,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="TestFiles\1_14_Horizon.xls" />
+    <None Include="TestFiles\Oxford 11.11 %281%29.xls" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="TestFiles\2013-10-edd5500e-d927-4394-b95b-c2609eea0f9f.txt" />
