@@ -92,11 +92,11 @@
     <EntitySetMapping Name="RawHorizons">
       <EntityTypeMapping TypeName="town6668Model.RawHorizon">
         <MappingFragment StoreEntitySet="RawHorizon">
+          <ScalarProperty Name="CommissionReceived" ColumnName="CommissionReceived" />
           <ScalarProperty Name="C_CoastalCode" ColumnName="_CoastalCode" />
           <ScalarProperty Name="Deleted" ColumnName="Deleted" />
           <ScalarProperty Name="Created" ColumnName="Created" />
           <ScalarProperty Name="Filename" ColumnName="Filename" />
-          <ScalarProperty Name="ComissionReceived" ColumnName="ComissionReceived" />
           <ScalarProperty Name="PremiumReceived" ColumnName="PremiumReceived" />
           <ScalarProperty Name="C_TotalPremiumYTD" ColumnName="_TotalPremiumYTD" />
           <ScalarProperty Name="CommissionSchedule" ColumnName="CommissionSchedule" />

@@ -8,6 +8,7 @@ namespace cfgtest
     public class BrokerTests : _BaseTest
     {
         [TestMethod]
+        [TestCategory("DB")]
         public void GetBrokerById()
         {
             Broker broker = repos.Broker(1);
@@ -15,6 +16,7 @@ namespace cfgtest
         }
 
         [TestMethod]
+        [TestCategory("DB")]
         public void TestBrokerFieldsAndCollections()
         {
             Broker broker = repos.Broker(1);
@@ -34,6 +36,7 @@ namespace cfgtest
         }
 
         [TestMethod]
+        [TestCategory("DB")]
         public void GetBrokerByNumber()
         {
             string[] brokerNumbers = new string[] { "014673", "006563", "006510", "006210" };
@@ -45,6 +48,8 @@ namespace cfgtest
             }
         }
 
+        [TestMethod]
+        [TestCategory("DB")]
         public void GetBrokerByNumberWithMultiples()
         {
             string brokerNumber = "100511"; // theres more than one broker in the db with this number...
@@ -59,6 +64,9 @@ namespace cfgtest
             }
         }
 
+        [TestMethod]
+        [TestCategory("DB")]
+        [Ignore]
         public void GetBrokerByName()
         {
             string[] brokerNames = new string[] { "ADVANCED INSURANCE AGENCY", "SHERWOOD, IAN" };
@@ -69,23 +77,6 @@ namespace cfgtest
                 Assert.IsTrue(broker.BrokerNumber == s, "Broker record not found: BrokerName: " + s);
             }
         }
-
-        //[TestMethod]
-        //public void GetHorizonFileByMonthAndYear()
-        //{
-        //    HorizonFile file = repos.HorizonFile(5, 2011);
-        //    Assert.IsTrue(file.Id == 37, "Incorrect or missing horizon record for month/year.");
-        //}
-
-        //[TestMethod]
-        //public void OpenFile()
-        //{
-        //    HorizonFile file = repos.HorizonFile(93);
-        //    int lineCount = file.Load();
-        //    Assert.IsTrue(lineCount > 0, "No data loaded from file.");
-        //    Assert.IsTrue(lineCount == 4314, "Incorrect number of lines loaded.");
-        //}
-
 
     }
 }

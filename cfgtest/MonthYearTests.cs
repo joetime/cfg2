@@ -8,6 +8,7 @@ namespace cfgtest
     public class MonthYearTests : _BaseTest
     {
         [TestMethod]
+        [TestCategory("utils")]
         public void TestMonthYearFromString()
         {
             MonthYear monthyear1 = new MonthYear("2013-04-01");
@@ -15,6 +16,7 @@ namespace cfgtest
         }
 
         [TestMethod]
+        [TestCategory("utils")]
         public void TestMonthYearFromDate() 
         {
             DateTime testDate = DateTime.Parse("December 31, 2011 4:50 PM");

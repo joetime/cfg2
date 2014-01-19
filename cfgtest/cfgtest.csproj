@@ -59,13 +59,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BrokerTests.cs" />
+    <Compile Include="Horizon\RawHorizonTests.cs" />
     <Compile Include="Oxford\RawOxfordTests.cs" />
-    <Compile Include="Horizon\HorizonLineItemCollection.cs" />
+    <Compile Include="Horizon\HorizonLineItemCollectionTests.cs" />
     <Compile Include="MonthYearTests.cs" />
-    <Compile Include="Horizon\HorizonFileLineItem.cs" />
+    <Compile Include="Horizon\HorizonFileLineItemTests.cs" />
     <Compile Include="Horizon\HorizonFileTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Horizon\LoadFromExcel.cs" />
+    <Compile Include="Horizon\LoadFromExcelTests.cs" />
     <Compile Include="_BaseTest.cs" />
   </ItemGroup>
   <ItemGroup>

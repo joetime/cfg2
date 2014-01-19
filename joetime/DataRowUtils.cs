@@ -9,6 +9,11 @@ namespace joetime
 {
     public static class DataRowUtils
     {
+        public static string StringAt(this DataRow row, int col)
+        {
+            return row[col].ToString();
+        }
+
         public static Decimal DecimalAt(this DataRow row, int col)
         {
             return Decimal.Parse(row[col].ToString());

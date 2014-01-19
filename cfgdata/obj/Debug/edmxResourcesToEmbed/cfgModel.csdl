@@ -146,11 +146,11 @@
     <Property Name="CommissionSchedule" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="C_TotalPremiumYTD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="PremiumReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-    <Property Name="ComissionReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
     <Property Name="Filename" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Deleted" Type="Boolean" Nullable="false" />
     <Property Name="C_CoastalCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CommissionReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
   </EntityType>
   <EntityType Name="RawOxford">
     <Key>

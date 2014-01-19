@@ -9,19 +9,18 @@ namespace cfglib
 {
     public class OxfordLineItem
     {
-        RawOxford rawOxford;
+        //RawOxford rawOxford;
+        //public OxfordLineItem(RawOxford raw)
+        //{
+        //    rawOxford = raw;
+        //}
+        //[Range(1,12)]
+        //[Range(1990,2025)]
 
         public OxfordLineItem() { }
 
-        public OxfordLineItem(RawOxford raw)
-        {
-            rawOxford = raw;
-        }
-
         public int Id { get; set; }
-        //[Range(1,12)]
         public int Month { get; set; }
-        //[Range(1990,2025)]
         public int Year { get; set; }
         public string GroupCode { get; set; }
         public string GroupName { get; set; }

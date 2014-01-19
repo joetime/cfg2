@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,9 +47,11 @@
     <Compile Include="Broker.cs" />
     <Compile Include="Horizon\HorizonFile.cs" />
     <Compile Include="Horizon\HorizonLineItemCollection.cs" />
+    <Compile Include="Horizon\HorizonRepos.cs" />
+    <Compile Include="Horizon\HorizonUtils.cs" />
     <Compile Include="Lookup.cs" />
     <Compile Include="MonthYear.cs" />
-    <Compile Include="Horizon\HorizonFileLineItem.cs" />
+    <Compile Include="Horizon\HorizonLineItem.cs" />
     <Compile Include="Oxford\OxfordLineItemCollection.cs" />
     <Compile Include="Oxford\OxfordLineItem.cs" />
     <Compile Include="Oxford\OxfordRepos.cs" />

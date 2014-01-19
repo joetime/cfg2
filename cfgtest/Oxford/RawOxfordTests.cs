@@ -31,7 +31,7 @@ namespace cfgtest
                 lineItem.Month = 0;
                 lineItem.Year = 13;
             }
-            catch (Exception ex) {
+            catch {
                 //Assert.Inconclusive(ex.Message);
             }
 

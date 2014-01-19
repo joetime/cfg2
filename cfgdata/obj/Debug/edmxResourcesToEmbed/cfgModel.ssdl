@@ -31,7 +31,7 @@
     <Property Name="CommissionSchedule" Type="nvarchar" MaxLength="250" />
     <Property Name="_TotalPremiumYTD" Type="nvarchar" MaxLength="250" />
     <Property Name="PremiumReceived" Type="money" Nullable="false" />
-    <Property Name="ComissionReceived" Type="money" Nullable="false" />
+    <Property Name="CommissionReceived" Type="money" Nullable="false" />
     <Property Name="Filename" Type="nvarchar" MaxLength="250" />
     <Property Name="Created" Type="datetime" Nullable="false" />
     <Property Name="Deleted" Type="bit" Nullable="false" />

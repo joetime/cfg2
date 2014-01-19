@@ -36,7 +36,7 @@
           <Property Name="CommissionSchedule" Type="nvarchar" MaxLength="250" />
           <Property Name="_TotalPremiumYTD" Type="nvarchar" MaxLength="250" />
           <Property Name="PremiumReceived" Type="money" Nullable="false" />
-          <Property Name="ComissionReceived" Type="money" Nullable="false" />
+          <Property Name="CommissionReceived" Type="money" Nullable="false" />
           <Property Name="Filename" Type="nvarchar" MaxLength="250" />
           <Property Name="Created" Type="datetime" Nullable="false" />
           <Property Name="Deleted" Type="bit" Nullable="false" />
@@ -337,11 +337,11 @@
           <Property Name="CommissionSchedule" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="C_TotalPremiumYTD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="PremiumReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="ComissionReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="Filename" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Deleted" Type="Boolean" Nullable="false" />
           <Property Name="C_CoastalCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CommissionReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="RawOxford">
           <Key>
@@ -474,11 +474,11 @@
           <EntitySetMapping Name="RawHorizons">
             <EntityTypeMapping TypeName="town6668Model.RawHorizon">
               <MappingFragment StoreEntitySet="RawHorizon">
+                <ScalarProperty Name="CommissionReceived" ColumnName="CommissionReceived" />
                 <ScalarProperty Name="C_CoastalCode" ColumnName="_CoastalCode" />
                 <ScalarProperty Name="Deleted" ColumnName="Deleted" />
                 <ScalarProperty Name="Created" ColumnName="Created" />
                 <ScalarProperty Name="Filename" ColumnName="Filename" />
-                <ScalarProperty Name="ComissionReceived" ColumnName="ComissionReceived" />
                 <ScalarProperty Name="PremiumReceived" ColumnName="PremiumReceived" />
                 <ScalarProperty Name="C_TotalPremiumYTD" ColumnName="_TotalPremiumYTD" />
                 <ScalarProperty Name="CommissionSchedule" ColumnName="CommissionSchedule" />

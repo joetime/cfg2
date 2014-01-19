@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using cfglib;
+using System.Collections.Generic;
 
 namespace cfgtest
 {
@@ -8,6 +9,7 @@ namespace cfgtest
     public class HorizonFileTests : _BaseTest
     {
         [TestMethod]
+        [TestCategory("DB")]
         public void GetHorizonFileById()
         {
             HorizonFile file = repos.HorizonFile(18);
@@ -15,6 +17,7 @@ namespace cfgtest
         }
 
         [TestMethod]
+        [TestCategory("DB")]
         public void GetHorizonFileByMonthAndYear()
         {
             HorizonFile file = repos.HorizonFile(5, 2011);
@@ -22,12 +25,16 @@ namespace cfgtest
         }
 
         [TestMethod]
+        [TestCategory("Horizon Files")]
         public void OpenFile()
         {
             HorizonFile file = repos.HorizonFile(93);
-            int lineCount = file.Load();
-            Assert.IsTrue(lineCount > 0, "No data loaded from file.");
-            Assert.AreEqual(4314, lineCount, "Incorrect number of lines loaded.");
+            
+            List<HorizonLineItem> items =
+                HorizonUtils.ReadFile("../../TestFiles/" + file.Filename);
+            
+            Assert.IsTrue(items.Count > 0, "No data loaded from file.");
+            Assert.AreEqual(4314, items.Count, "Incorrect number of lines loaded.");
         }
     }
 }

@@ -40,68 +40,10 @@ namespace cfglib
         /// Opens the text file and loads all of the data into the object.
         /// </summary>
         /// <returns>The number of LineItems read and loaded.</returns>
-        public int Load()
-        {
-            LineItems = new List<HorizonFileLineItem>();
-
-            if (Filename.ToLower().Contains(".txt"))
-            {
-                LoadTextFile();
-            }
-            else if (Filename.ToLower().Contains(".xls"))
-            {
-                string path = "../../TestFiles/" + Filename;
-                ExcelFile file = new ExcelFile(path);
-                DataTable data = file.GetFirstWorksheet();
-
-                foreach (DataRow row in data.Rows)
-                {
-                    var x = row.ItemArray[0];
-
-                    int i = 5;
-                }
-            }
-
-            return LineItems.Count();
-        }
-
-        private void LoadTextFile()
-        {
-            FileStream stream = OpenTextFile();
-            StreamReader reader = new StreamReader(stream);
-
-            // For text files:
-            while (!reader.EndOfStream)
-            {
-                HorizonFileLineItem item = new HorizonFileLineItem(reader.ReadLine());
-                if (item.status == HorizonFileLineItemStatus.Ok)
-                    LineItems.Add(item);
-            }
-        }
-
-        /// <summary>
-        /// Open the text file
-        /// </summary>
-        /// <returns>A stream to read.</returns>
-        private FileStream OpenTextFile()
-        {
-            string path = "../../TestFiles/" + Filename;
-
-            if (!File.Exists(path))
-                throw new InvalidOperationException("File could not be found: " + path);
-
-            try
-            {
-                return File.OpenRead(path);
-            }
-            catch
-            {
-                throw new InvalidOperationException("File could not be opened: " + path);
-            }
-        }
+        
 
 
-        public ICollection<HorizonFileLineItem> LineItems { get; private set; }
+        public ICollection<HorizonLineItem> LineItems { get; private set; }
 
         public int Id { get; private set; }
         public string Filename { get; private set; }
@@ -141,14 +83,6 @@ namespace cfglib
                           select import).First();
 
             return new HorizonFile(h);
-        }
-
-        /// <summary>
-        /// Load a file raw
-        /// </summary>
-        public HorizonFile HorizonFile(string fileName)
-        {
-            return new HorizonFile(fileName, 12, 2013);
         }
 
         /// <summary>

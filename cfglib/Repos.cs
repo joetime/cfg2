@@ -1,6 +1,7 @@
 ﻿using cfgdata;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,7 +46,7 @@ namespace cfglib
             audit.RecordCount = recordCount;
             audit.Action = action.ToString();
 
-
+            Debug.WriteLine("[AUDIT]   " + message);
             DB.Audits.Add(audit);
         }
 
