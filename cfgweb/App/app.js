@@ -23,6 +23,11 @@
             templateUrl: 'app/reports.html'
         })
 
+        .when('/import', {
+            controller: 'ImportCtrl',
+            templateUrl: 'app/import/import.html'
+        })
+
         .otherwise({
             redirectTo: '/'
         });

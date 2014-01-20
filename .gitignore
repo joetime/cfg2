@@ -6,6 +6,9 @@
 *.user
 *.sln.docstates
 
+#IMPORTS = LOCAL
+cfgweb/Imports/*
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/

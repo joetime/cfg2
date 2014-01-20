@@ -1,0 +1,152 @@
+﻿<style>
+    form p {
+        border: 1px solid #ededed;
+        border-bottom: 0px;
+        margin: 0px;
+        padding: 15px;
+    }
+
+    form {
+        border-bottom: 1px solid #ededed;
+    }
+        form.working {
+            opacity: 0.5;
+        }
+</style>
+
+<div class="row">
+
+    <div class="debug" ng-show="debug">
+        working: {{working}}<br />
+        complete: {{complete}}<br />
+        progress: {{progress}}<br />
+        error: {{error}}<br />
+        errorMessage: {{errorMessage}}<br />
+        resp: {{resp | json}}<br />
+        <button class="btn btn-warning"
+                ng-click="OnUploadError()">
+            OnUploadError</button>
+        <button class="btn btn-warning"
+                ng-click="OnUploadComplete()">
+            OnUploadComplete
+        </button>
+    </div>
+
+    <div class="alert alert-danger" ng-show="error">
+        Error uploading file! {{errorMessage}}
+    </div>
+
+    <div class="col-md-8 col-md-offset-2" ng-show="complete">
+        <h2>Complete!</h2>
+    
+        <p>
+            Lines: {{resp.lineCount}}
+        </p>
+        <p>
+            Total $: {{resp.totalDollars}}
+        </p>
+        <p>
+            Total Commission: {{resp.totalCommission}}
+        </p>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+
+        <div ng-show="working">
+
+            <h2>One moment...</h2>
+
+            <div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0"
+                     aria-valuemax="100" style="width: 100%">
+                    <span class="sr-only">45% Complete</span>
+                </div>
+            </div>
+
+            <div class="well">
+
+                {{provider}} - {{month}} - {{year}}<br />
+                <h3>{{progress}}</h3>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+
+        <form ng-class="{ working: working }" novalidate name="myForm">
+
+            <p>
+                <button type="submit" class="btn btn-primary"
+                        ng-disabled="working || myForm.$invalid"
+                        ng-click="upload_click()">
+                    Upload
+                </button>
+            </p>
+
+            <p>
+                <label for="fileInput">Choose File:</label>
+                <input class="" type="file" id="fileIn"
+                       required
+                       ng-required="true"
+                       ng-disabled="working" />
+            </p>
+
+            <p>
+                <label>Provider:</label><br />
+
+                <label class="btn btn-default">
+                    <input type="radio" ng-model="provider" value="Oxford"
+                           ng-required="true"
+                           ng-disabled="working">
+                    <img src="https://www.unitedhealthcareonline.com/ccmcontent/ProviderII/UHC/en-US/Assets/Images/Affiliates/OXHP_K_horizsmall.jpg" height="60px" />
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" ng-model="provider" value="Horizon"
+                           ng-required="true"
+                           ng-disabled="working">
+                    <img src="http://www.horizonblue.com/sites/default/files/logo/HorizonBlue-Logo-Updated-Jan15.jpg" height="60px" />
+                </label>
+
+            </p>
+
+            <p>
+                <label>Month:</label>
+
+                <select class="form-control"
+                        ng-required="true"
+                        ng-model="month"
+                        ng-disabled="working">
+                    <option value=""></option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </p>
+
+            <p>
+                <label>Year:</label>
+
+                <input class="form-control" type="number"
+                       required
+                       ng-required="true"
+                       ng-model="year"
+                       ng-disabled="working" />
+            </p>
+
+        </form>
+
+
+    </div>
+
+</div>

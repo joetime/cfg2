@@ -9,6 +9,16 @@ namespace cfgweb.API
 {
     public class BaseApiController : ApiController
     {
-        protected Repos repos = new Repos();
+        protected Repos repos;
+
+        public BaseApiController()
+        {
+            // use the userName for audits
+            string username = (User.Identity.Name == "")
+                ? "API"
+                : User.Identity.Name;
+            
+            repos = new Repos(username);
+        }
     }
 }

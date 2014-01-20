@@ -30,7 +30,7 @@ namespace cfglib
             if (lineItems.Count == 0)
                 throw new InvalidOperationException("Nothing to save.");
 
-            Repos repos = new Repos();
+            Repos repos = new Repos("?");
 
 
             int checkDb = repos.RawOxfordRecordsCount(year, month);

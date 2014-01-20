@@ -44,21 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audit.cs" />
     <Compile Include="Broker.cs" />
-    <Compile Include="Horizon\HorizonFile.cs" />
-    <Compile Include="Horizon\HorizonLineItemCollection.cs" />
-    <Compile Include="Horizon\HorizonRepos.cs" />
-    <Compile Include="Horizon\HorizonUtils.cs" />
+    <Compile Include="RawRecords\Horizon\HorizonFile.cs" />
+    <Compile Include="RawRecords\Horizon\HorizonLineItemCollection.cs" />
+    <Compile Include="RawRecords\Horizon\HorizonRepos.cs" />
+    <Compile Include="RawRecords\Horizon\HorizonUtils.cs" />
     <Compile Include="Lookup.cs" />
-    <Compile Include="MonthYear.cs" />
-    <Compile Include="Horizon\HorizonLineItem.cs" />
-    <Compile Include="Oxford\OxfordLineItemCollection.cs" />
-    <Compile Include="Oxford\OxfordLineItem.cs" />
-    <Compile Include="Oxford\OxfordRepos.cs" />
-    <Compile Include="Oxford\OxfordUtils.cs" />
-    <Compile Include="RawRecords.cs" />
+    <Compile Include="RawRecords\Horizon\HorizonLineItem.cs" />
+    <Compile Include="RawRecords\Oxford\OxfordLineItemCollection.cs" />
+    <Compile Include="RawRecords\Oxford\OxfordLineItem.cs" />
+    <Compile Include="RawRecords\Oxford\OxfordRepos.cs" />
+    <Compile Include="RawRecords\Oxford\OxfordUtils.cs" />
+    <Compile Include="RawRecords\RawRecords.cs" />
     <Compile Include="Repos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReposImport.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\cfgdata\cfgdata.csproj">

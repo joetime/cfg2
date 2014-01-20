@@ -62,7 +62,6 @@
     <Compile Include="Horizon\RawHorizonTests.cs" />
     <Compile Include="Oxford\RawOxfordTests.cs" />
     <Compile Include="Horizon\HorizonLineItemCollectionTests.cs" />
-    <Compile Include="MonthYearTests.cs" />
     <Compile Include="Horizon\HorizonFileLineItemTests.cs" />
     <Compile Include="Horizon\HorizonFileTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -15,6 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfgtest", "cfgtest\cfgtest.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cfgweb", "cfgweb\cfgweb.csproj", "{4D673202-0ACE-443D-AD6C-10913644BDB4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{38967C21-BCEC-4808-8A75-DFD842C6BB25}"
+	ProjectSection(SolutionItems) = preProject
+		gitignore.txt = gitignore.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
