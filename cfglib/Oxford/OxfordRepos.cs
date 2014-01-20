@@ -1,4 +1,5 @@
 ﻿using cfgdata;
+using joetime;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace cfglib
 
         public int RawOxfordRecordsCount(int year, int month)
         {
-            YearMonthCheck(year, month);
+            JoeUtils.YearMonthCheck(year, month);
 
             return DB.RawOxfords
                 .Where(x =>
@@ -35,7 +36,7 @@ namespace cfglib
 
         public void AddOxfordRecords(List<OxfordLineItem> items, int year, int month)
         {
-            YearMonthCheck(year, month);
+            JoeUtils.YearMonthCheck(year, month);
 
             foreach (OxfordLineItem item in items)
             {
@@ -84,7 +85,7 @@ namespace cfglib
 
         public void DeleteOxfordRecords(int year, int month)
         {
-            YearMonthCheck(year, month);
+            JoeUtils.YearMonthCheck(year, month);
 
             var records = DB.RawOxfords.Where(x => x.Month == month && x.Year == year && !x.Deleted);
 

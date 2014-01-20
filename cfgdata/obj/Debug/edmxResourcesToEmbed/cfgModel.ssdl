@@ -19,14 +19,14 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Year" Type="int" Nullable="false" />
-    <Property Name="Month" Type="int" />
+    <Property Name="Month" Type="int" Nullable="false" />
     <Property Name="GroupName" Type="nvarchar" MaxLength="250" />
     <Property Name="GroupNumber" Type="nvarchar" MaxLength="250" />
     <Property Name="Product" Type="nvarchar" MaxLength="250" />
     <Property Name="EffectiveDate" Type="nvarchar" MaxLength="250" />
     <Property Name="RenewalDate" Type="nvarchar" MaxLength="250" />
     <Property Name="InsuredPeriod" Type="nvarchar" MaxLength="250" />
-    <Property Name="_CodeOneHundredd" Type="nvarchar" MaxLength="250" />
+    <Property Name="_CodeOneHundred" Type="nvarchar" MaxLength="250" />
     <Property Name="_CoastalCode" Type="nvarchar" MaxLength="250" />
     <Property Name="CommissionSchedule" Type="nvarchar" MaxLength="250" />
     <Property Name="_TotalPremiumYTD" Type="nvarchar" MaxLength="250" />

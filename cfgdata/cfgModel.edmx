@@ -24,14 +24,14 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
-          <Property Name="Month" Type="int" />
+          <Property Name="Month" Type="int" Nullable="false" />
           <Property Name="GroupName" Type="nvarchar" MaxLength="250" />
           <Property Name="GroupNumber" Type="nvarchar" MaxLength="250" />
           <Property Name="Product" Type="nvarchar" MaxLength="250" />
           <Property Name="EffectiveDate" Type="nvarchar" MaxLength="250" />
           <Property Name="RenewalDate" Type="nvarchar" MaxLength="250" />
           <Property Name="InsuredPeriod" Type="nvarchar" MaxLength="250" />
-          <Property Name="_CodeOneHundredd" Type="nvarchar" MaxLength="250" />
+          <Property Name="_CodeOneHundred" Type="nvarchar" MaxLength="250" />
           <Property Name="_CoastalCode" Type="nvarchar" MaxLength="250" />
           <Property Name="CommissionSchedule" Type="nvarchar" MaxLength="250" />
           <Property Name="_TotalPremiumYTD" Type="nvarchar" MaxLength="250" />
@@ -316,33 +316,10 @@
             <End Role="hzBrokers" EntitySet="hzBrokers" />
             <End Role="hzCommissionRates" EntitySet="hzCommissionRates" />
           </AssociationSet>
-          <EntitySet Name="RawHorizons" EntityType="town6668Model.RawHorizon" />
           <EntitySet Name="RawOxfords" EntityType="town6668Model.RawOxford" />
           <EntitySet Name="Audits" EntityType="town6668Model.Audit" />
+          <EntitySet Name="RawHorizons" EntityType="town6668Model.RawHorizon" />
         </EntityContainer>
-        <EntityType Name="RawHorizon">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Year" Type="Int32" Nullable="false" />
-          <Property Name="Month" Type="Int32" />
-          <Property Name="GroupName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="GroupNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Product" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="EffectiveDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="RenewalDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="InsuredPeriod" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="C_CodeOneHundredd" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CommissionSchedule" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="C_TotalPremiumYTD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="PremiumReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Filename" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Deleted" Type="Boolean" Nullable="false" />
-          <Property Name="C_CoastalCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="CommissionReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-        </EntityType>
         <EntityType Name="RawOxford">
           <Key>
             <PropertyRef Name="Id" />
@@ -376,6 +353,29 @@
           <Property Name="ObjectType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="ObjectKey" Type="Int32" />
           <Property Name="Action" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RawHorizon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Month" Type="Int32" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="GroupNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Product" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="EffectiveDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="RenewalDate" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="InsuredPeriod" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="C_CodeOneHundred" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="C_CoastalCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CommissionSchedule" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="C_TotalPremiumYTD" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PremiumReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CommissionReceived" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Filename" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -471,30 +471,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="RawHorizons">
-            <EntityTypeMapping TypeName="town6668Model.RawHorizon">
-              <MappingFragment StoreEntitySet="RawHorizon">
-                <ScalarProperty Name="CommissionReceived" ColumnName="CommissionReceived" />
-                <ScalarProperty Name="C_CoastalCode" ColumnName="_CoastalCode" />
-                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-                <ScalarProperty Name="Created" ColumnName="Created" />
-                <ScalarProperty Name="Filename" ColumnName="Filename" />
-                <ScalarProperty Name="PremiumReceived" ColumnName="PremiumReceived" />
-                <ScalarProperty Name="C_TotalPremiumYTD" ColumnName="_TotalPremiumYTD" />
-                <ScalarProperty Name="CommissionSchedule" ColumnName="CommissionSchedule" />
-                <ScalarProperty Name="C_CodeOneHundredd" ColumnName="_CodeOneHundredd" />
-                <ScalarProperty Name="InsuredPeriod" ColumnName="InsuredPeriod" />
-                <ScalarProperty Name="RenewalDate" ColumnName="RenewalDate" />
-                <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
-                <ScalarProperty Name="Product" ColumnName="Product" />
-                <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
-                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
-                <ScalarProperty Name="Month" ColumnName="Month" />
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="RawOxfords">
             <EntityTypeMapping TypeName="town6668Model.RawOxford">
               <MappingFragment StoreEntitySet="RawOxford">
@@ -527,6 +503,30 @@
                 <ScalarProperty Name="RecordCount" ColumnName="RecordCount" />
                 <ScalarProperty Name="Message" ColumnName="Message" />
                 <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RawHorizons">
+            <EntityTypeMapping TypeName="town6668Model.RawHorizon">
+              <MappingFragment StoreEntitySet="RawHorizon">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Filename" ColumnName="Filename" />
+                <ScalarProperty Name="CommissionReceived" ColumnName="CommissionReceived" />
+                <ScalarProperty Name="PremiumReceived" ColumnName="PremiumReceived" />
+                <ScalarProperty Name="C_TotalPremiumYTD" ColumnName="_TotalPremiumYTD" />
+                <ScalarProperty Name="CommissionSchedule" ColumnName="CommissionSchedule" />
+                <ScalarProperty Name="C_CoastalCode" ColumnName="_CoastalCode" />
+                <ScalarProperty Name="C_CodeOneHundred" ColumnName="_CodeOneHundred" />
+                <ScalarProperty Name="InsuredPeriod" ColumnName="InsuredPeriod" />
+                <ScalarProperty Name="RenewalDate" ColumnName="RenewalDate" />
+                <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -31,8 +31,8 @@ namespace cfgdata
         public virtual DbSet<hzImport> hzImports { get; set; }
         public virtual DbSet<hzLockedRecord> hzLockedRecords { get; set; }
         public virtual DbSet<hzLog> hzLogs { get; set; }
-        public virtual DbSet<RawHorizon> RawHorizons { get; set; }
         public virtual DbSet<RawOxford> RawOxfords { get; set; }
         public virtual DbSet<Audit> Audits { get; set; }
+        public virtual DbSet<RawHorizon> RawHorizons { get; set; }
     }
 }

@@ -91,6 +91,7 @@
     <Compile Include="RawOxford.cs">
       <DependentUpon>cfgModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="IRawRecords.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="cfgModel.edmx">

@@ -49,11 +49,5 @@ namespace cfglib
             Debug.WriteLine("[AUDIT]   " + message);
             DB.Audits.Add(audit);
         }
-
-        private static void YearMonthCheck(int year, int month)
-        {
-            if (year < 1990 || year > 2025 || month < 1 || month > 12)
-                throw new InvalidOperationException(String.Format("Date seems invalid (M/Y): {0}/{1}", month, year));
-        }
     }
 }
