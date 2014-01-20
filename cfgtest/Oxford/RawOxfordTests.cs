@@ -42,7 +42,6 @@ namespace cfgtest
         [TestMethod]
         [TestCategory("Oxford Files")]
         [TestCategory("Long Tests")]
-        [Ignore]
         public void TestSaveAndDeleteRecords()
         {
             int month = 1;

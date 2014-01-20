@@ -9,6 +9,9 @@ namespace cfgdata
     public partial class RawHorizon : IRawRecords 
     {     
     }
+    public partial class RawOxford : IRawRecords
+    {
+    }
 
     public interface IRawRecords
     {

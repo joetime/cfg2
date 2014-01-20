@@ -13,7 +13,7 @@ namespace cfglib
     //    Unknown
     //}
 
-    public class HorizonLineItem
+    public partial class HorizonLineItem
     {
         public int Id { get; set; }
         public int Year { get; set; }

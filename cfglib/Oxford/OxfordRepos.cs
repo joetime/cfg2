@@ -8,19 +8,12 @@ using System.Threading.Tasks;
 
 namespace cfglib
 {
+    //public partial class OxfordLineItem //: ILineItem { }
+    //public partial class HorizonLineItem //: ILineItem { }
+
     public partial class Repos
     {
-        //protected IQueryable<RawOxford> RawOxfordRecords(int year, int month)
-        //{
-
-        //    YearMonthCheck(year, month);
-
-        //    return DB.RawOxfords
-        //        .Where(x =>
-        //            !x.Deleted
-        //            && x.Month == month
-        //            && x.Year == year);
-        //}
+        RawOxfordBatchOps OxfordBatchOps = new RawOxfordBatchOps();
 
         public int RawOxfordRecordsCount(int year, int month)
         {
@@ -32,72 +25,33 @@ namespace cfglib
                     && x.Month == month
                     && x.Year == year)
                 .Count();
+
         }
 
-        public void AddOxfordRecords(List<OxfordLineItem> items, int year, int month)
+        public void AddOxfordRecords(List<OxfordLineItem> items, int year, int month,
+            int batchSize = 250)
         {
-            JoeUtils.YearMonthCheck(year, month);
-
-            foreach (OxfordLineItem item in items)
-            {
-                DB.RawOxfords.Add(new RawOxford()
-                {
-                    Created = item.Created,
-                    Month = month,
-                    Year = year,
-                    FileName = item.FileName,
-
-                    Deleted = false,
-                    GroupCode = item.GroupCode,
-                    GroupName = item.GroupName,
-                    InvoicePeriod = item.InvoicePeriod,
-                    AmountBilled = item.AmountBilled,
-                    AmountDue = item.AmountDue,
-                    CommissionAmount = item.CommissionAmount,
-
-                    PaymentReceived = item.PaymentReceived,
-                    PEPM = item.PEPM,
-                    PercentOfPremium = item.PercentOfPremium,
-                    SubCountPEPM = item.SubCountPEPM
-                });
-            }
+            double time = OxfordBatchOps.AddRecords(items, year, month, 250);
 
             AddAudit(
-                message: String.Format("Add {0} RawOxfords, month: {1} year: {2}", items.Count, month, year),
-                objectType: "RawOxford",
+                message: String.Format("Add {0} RawHorizons, month: {1} year: {2}... totalSeconds: {3:0.00}", items.Count, month, year, time),
+                objectType: "RawHorizon",
                 objectKey: null,
                 recordCount: items.Count(),
                 action: DbActionType.Insert);
         }
 
-        public void DeleteOxfordRecords(IEnumerable<RawOxford> items)
-        {
-            foreach (RawOxford record in items)
-                record.Deleted = true;
-
-            AddAudit(
-                message: "Delete Oxford records.",
-                objectType: "RawOxford",
-                objectKey: null,
-                recordCount: items.Count(),
-                action: DbActionType.Delete);
-        }
-
         public void DeleteOxfordRecords(int year, int month)
         {
-            JoeUtils.YearMonthCheck(year, month);
+            OxfordBatchOps.DeleteRecords(year, month);
 
-            var records = DB.RawOxfords.Where(x => x.Month == month && x.Year == year && !x.Deleted);
+            AddAudit(
+                message: String.Format("Delete Horizon records (M/Y): {0}/{1}", month, year),
+                objectType: "RawOxford",
+                objectKey: null,
+                //recordCount: records.Count(),
+                action: DbActionType.Delete);
 
-            foreach (RawOxford record in records)
-                record.Deleted = true;
-
-            AddAudit( 
-                message: String.Format("Delete Oxford records (M/Y).", month, year), 
-                objectType: "RawOxford", 
-                objectKey: null, 
-                recordCount: records.Count(), 
-                action: DbActionType.Delete );
         }
     }
 }

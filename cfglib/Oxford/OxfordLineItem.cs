@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace cfglib
 {
-    public class OxfordLineItem
+    public partial class OxfordLineItem
     {
         //RawOxford rawOxford;
         //public OxfordLineItem(RawOxford raw)
